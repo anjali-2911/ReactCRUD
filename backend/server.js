@@ -20,10 +20,10 @@ app.get("/", (req, res)=>{
         if(err) return res.json("Error");
         return res.json(data);
     })
-})
+})                                                                                          
 
 app.post("/create", (req, res)=>{
-    console.log("in post methd")
+    console.log("in post method")
     const sql = "INSERT INTO student (`Name`,`Email`) values (?)";
     const values = [
         req.body.name, 
@@ -55,7 +55,7 @@ app.put("/update/:id", (req, res)=>{
 })
 
 app.delete("/student/:id", (req, res)=>{
-    console.log("in delete methd")
+    console.log("in delete method")
     const sql = "DELETE FROM student WHERE ID = ?";
     const id = req.params.id;
       
@@ -65,9 +65,6 @@ app.delete("/student/:id", (req, res)=>{
         return res.json(data);
     })
 })
-
-
-
 
 app.listen(8081, ()=>{
     console.log("listening");
